@@ -1,11 +1,13 @@
 import express from "express";
 import fs from "fs";
 import cors from "cors";
+
 const app = express();
 app.use(cors());
 
 const PORT = 4200;
-const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
+
+const data = fs.readFileSync(`dev-data/data/tours-simple.json`, "utf-8");
 
 interface DataProps {
   id: number | string;
@@ -18,7 +20,9 @@ interface DataProps {
   organic: boolean;
   description: string;
 }
-app.get("/farm", (req, res) => res.send("Welcome to node-typescript"));
+
+app.get("/", (req, res) => res.send("Welcome to node-typescript"));
+app.get("/farm", (req, res) => res.status(200).send(data));
 
 app.get("/farmDetail", (req, res) =>
   res.send(JSON.parse(data).find((data: DataProps) => data.id == req.query.id))
