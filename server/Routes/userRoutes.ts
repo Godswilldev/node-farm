@@ -1,15 +1,15 @@
 import express from "express";
 import {
+  getUser,
   getUsers,
   addNewUser,
-  getUser,
   updateUser,
   deleteUser,
-} from "../Controllers/userController";
+} from "server/Controllers/userController";
 
 const router = express.Router();
 
-router.param("id", (req, res, next, val) => {
+router.param("id", (_req, _res, next, _val) => {
   next();
 });
 

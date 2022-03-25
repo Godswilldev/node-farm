@@ -1,18 +1,20 @@
 import express from "express";
 import {
-  getALlTours,
-  addNewTour,
-  getSingleTour,
-  updateTour,
-  deleteTour,
   checkId,
   checkBody,
-} from "../Controllers/tourControllers";
+  deleteTour,
+  addNewTour,
+  updateTour,
+  getALlTours,
+  getSingleTour,
+} from "server/Controllers/tourControllers";
 
 const router = express.Router();
 
+// param middleware to check if the id is valid
 router.param("id", (req, res, next, val) => checkId(req, res, next, val));
 
+// routes
 router.route("/").get(getALlTours).post(checkBody, addNewTour);
 router.route("/:id").get(getSingleTour).patch(updateTour).delete(deleteTour);
 
