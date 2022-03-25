@@ -5,15 +5,17 @@ import {
   addNewUser,
   updateUser,
   deleteUser,
-} from "server/Controllers/userController";
+  checkNewUserBody,
+  checkIfUserExists,
+} from "server/controllers/userController";
 
 const router = express.Router();
 
-router.param("id", (_req, _res, next, _val) => {
-  next();
-});
+router.param("id", (req, res, next, val) =>
+  checkIfUserExists(req, res, next, val)
+);
 
-router.route("/").get(getUsers).post(addNewUser);
+router.route("/").get(getUsers).post(checkNewUserBody, addNewUser);
 router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 
 export default router;

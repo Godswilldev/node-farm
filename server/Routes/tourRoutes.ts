@@ -2,12 +2,12 @@ import express from "express";
 import {
   checkId,
   checkBody,
+  updateTour,
   deleteTour,
   addNewTour,
-  updateTour,
   getALlTours,
   getSingleTour,
-} from "server/Controllers/tourControllers";
+} from "server/controllers/tourControllers";
 
 const router = express.Router();
 
