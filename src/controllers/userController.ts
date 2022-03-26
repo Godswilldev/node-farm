@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
 // middleware
-
 export const checkIfUserExists = (
   _req: Request,
   res: Response,

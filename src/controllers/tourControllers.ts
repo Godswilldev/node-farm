@@ -63,7 +63,6 @@ export const getSingleTour = (
   });
 
 // add new tour
-
 export const addNewTour = (req: Request, res: Response) => {
   const id = tours[tours.length - 1].id + 1;
   const newTour = { id, ...req.body };
