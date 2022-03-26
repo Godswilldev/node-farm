@@ -11,7 +11,9 @@ import {
 
 const router = express.Router();
 
-router.param("id", (req, res, next, val) => checkIfUserExists(req, res, next, val));
+router.param("id", (req, res, next, val) =>
+  checkIfUserExists(req, res, next, val)
+);
 
 router.route("/").get(getUsers).post(checkNewUserBody, addNewUser);
 router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
