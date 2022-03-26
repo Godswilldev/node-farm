@@ -2,7 +2,8 @@ import morgan from "morgan";
 import tourRouter from "./routes/tourRoutes";
 import usersRouter from "./routes/userRoutes";
 import express from "express";
-import { app } from "./server";
+
+export const app = express();
 
 // middleware to log each request to the console
 process.env.NODE_ENV === "development" && app.use(morgan("dev"));
