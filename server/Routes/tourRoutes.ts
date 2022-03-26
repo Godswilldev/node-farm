@@ -7,7 +7,7 @@ import {
   addNewTour,
   getALlTours,
   getSingleTour,
-} from "server/controllers/tourControllers";
+} from "../controllers/tourControllers";
 
 const router = express.Router();
 

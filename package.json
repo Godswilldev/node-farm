@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/Godswilldev/node-farm/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/Godswilldev/node-farm#readme",
   "devDependencies": {
     "@types/cors": "^2.8.12",
