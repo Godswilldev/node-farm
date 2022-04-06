@@ -7,13 +7,12 @@ dotenv.config({
 });
 
 const DB = process.env.MONGO_LOCAL_DB_URL || "";
+const port = process.env.PORT || 4289;
 
 const connectToDatabase = async () => {
   await mongoose.connect(DB);
   console.log("******DATABASE CONNECTED******");
 };
-
-const port = process.env.PORT || 4289;
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
